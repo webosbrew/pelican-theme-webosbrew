@@ -48,7 +48,6 @@ header {
   justify-content: left;
   column-gap: 30px;
   padding: 10px;
-  position: relative;
 
   .main {
     width: auto;
@@ -56,6 +55,7 @@ header {
     flex: 1 1 auto;
     padding: 20px;
     box-sizing: border-box;
+    position: relative;
   }
 
   .side {
