@@ -2,9 +2,9 @@
 <div class="pagination">
     {% if pagination.prev %}
     {% if pagination.prev.disabled %}
-    <label class="entry disabled">&lt; Previous</label>
+    <label class="entry disabled">Previous</label>
     {% else %}
-    <a class="entry" href="{{pagination.prev.href}}">Previous</a>
+    <a class="entry" href="{{pagination.prev.href}}">&lt; Previous</a>
     {% endif %}
     {% endif %}
     {% for entry in pagination.entries %}
