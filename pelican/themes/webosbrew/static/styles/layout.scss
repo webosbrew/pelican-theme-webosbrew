@@ -82,6 +82,21 @@ footer {
   overflow-x: auto;
 }
 
+.pagination {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  gap: 2px;
+
+  .entry {
+    padding: 10px 15px;
+    border-radius: 4px;
+    border: transparent 1px solid;
+    box-sizing: border-box;
+  }
+
+}
+
 @media (max-width: $desktop-small-width) {
   #content {
     width: auto;

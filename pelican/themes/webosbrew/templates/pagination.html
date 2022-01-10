@@ -1,0 +1,27 @@
+{% if pagination %}
+<div class="pagination">
+    {% if pagination.prev %}
+    {% if pagination.prev.disabled %}
+    <label class="entry disabled">&lt; Previous</label>
+    {% else %}
+    <a class="entry" href="{{pagination.prev.href}}">Previous</a>
+    {% endif %}
+    {% endif %}
+    {% for entry in pagination.entries %}
+    {% if entry.gap %}
+    <label class="entry gap">&hellip;</label>
+    {% elif entry.current %}
+    <label class="entry current">{{entry.page}}</label>
+    {% else %}
+    <a class="entry" href="{{entry.href}}">{{entry.page}}</a>
+    {% endif %}
+    {% endfor %}
+    {% if pagination.next %}
+    {% if pagination.next.disabled %}
+    <label class="entry disabled">Next</label>
+    {% else %}
+    <a class="entry" href="{{pagination.next.href}}">Next &gt;</a>
+    {% endif %}
+    {% endif %}
+</div>
+{% endif %}
