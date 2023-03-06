@@ -14,7 +14,9 @@
     {% import 'translations.html' as translations with context %}
     {{ translations.translations_for(page) }}
 
+    <main>
     {{ page.content }}
+    </main>
 
     {% if page.modified %}
         <p>
