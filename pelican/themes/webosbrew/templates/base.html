@@ -67,11 +67,13 @@
             {% endif %}
         </ul>
     </nav><!-- /#menu -->
+{% if ENABLE_SEARCH %}
     <div style="flex-grow: 1"></div>
     <div class="search-box stork-wrapper-dark">
         <input data-stork="sitesearch" class="stork-input" placeholder="Search" />
         <div data-stork="sitesearch-output" class="stork-output"></div>
     </div>
+{% endif %}
 </header>
 <div id="content">
     <div class="main">
