@@ -15,7 +15,7 @@ def static_dir():
 
 
 def scss_dir():
-    return path.join(static_dir(), 'styles')
+    return path.join(theme_dir(), 'styles')
 
 
 def pagination_data(current: int, total: int, link_maker: Callable[[int], str]):
