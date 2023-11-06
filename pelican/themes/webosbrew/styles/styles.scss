@@ -63,6 +63,10 @@ div#content {
   .main {
     border: $color-border 1px solid;
     border-radius: 4px;
+
+    p img {
+      max-width: 100%;
+    }
   }
 
   .side {
