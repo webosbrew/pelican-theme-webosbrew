@@ -128,9 +128,12 @@ footer {
 }
 
 @media (min-width: $desktop-large-width) {
+  .search-box {
+    width: 400px;
+  }
+
   #content {
     width: $desktop-large-width;
-
     .main {
       max-width: $content-large-width;
     }
