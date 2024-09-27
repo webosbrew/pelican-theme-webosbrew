@@ -67,6 +67,13 @@
             {% endif %}
         </ul>
     </nav><!-- /#menu -->
+{% if ENABLE_SEARCH %}
+    <div style="flex-grow: 1"></div>
+    <div class="search-box stork-wrapper-dark">
+        <input data-stork="sitesearch" class="stork-input" placeholder="Search" />
+        <div data-stork="sitesearch-output" class="stork-output"></div>
+    </div>
+{% endif %}
 </header>
 <div id="content">
     <div class="main">
@@ -81,5 +88,13 @@
 </div>
 <hr>
 {% include "footer.html" %}
+{% if ENABLE_SEARCH %}
+<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/stork.js"></script>
+<script>
+    stork.initialize("{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/stork.wasm")
+    stork.downloadIndex("sitesearch", "{{ SITEURL }}/search-index.st")
+    stork.attach("sitesearch")
+</script>
+{% endif %}
 </body>
 </html>
