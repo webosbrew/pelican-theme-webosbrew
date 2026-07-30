@@ -1,6 +1,35 @@
-<footer id="contentinfo" class="body">
+<footer class="py-5 bg-body-tertiary border-top mt-4">
     {% block footer %}
-    <div class="copyright">&copy; {{ COPYRIGHT_YEAR }} webOS Homebrew Project</div>
-    <div class="powered-by">Powered by <a href="https://getpelican.com/">Pelican</a></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md">
+                <img class="logo" width="32" height="32" src="{{ SITEURL }}/theme/images/icon32.svg" alt="{{ SITENAME }}">
+                <small class="d-block mb-3 text-body-secondary" translate="no">&copy; 2020-{{ COPYRIGHT_YEAR }}</small>
+            </div>
+            {# Columns come from FOOTER_SECTIONS; fall back to a single Links column from LINKS. #}
+            {% if FOOTER_SECTIONS %}
+            {% for section in FOOTER_SECTIONS %}
+            <div class="col-6 col-md">
+                <h5>{{ section.title }}</h5>
+                <ul class="list-unstyled text-small">
+                    {% for item in section.links %}
+                    <li><a class="link-secondary text-decoration-none" href="{{ item.href }}">
+                        {% if item.icon %}<i class="bi {{ item.icon }} me-2"></i>{% endif %}{{ item.text }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+            {% elif LINKS %}
+            <div class="col-6 col-md">
+                <h5>Links</h5>
+                <ul class="list-unstyled text-small">
+                    {% for name, link in LINKS %}
+                    <li><a class="link-secondary text-decoration-none" href="{{ link }}">{{ name }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+        </div>
+    </div>
     {% endblock footer %}
-</footer><!-- /#contentinfo -->
+</footer>
